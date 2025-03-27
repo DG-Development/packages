@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Enhanced FileProvider paths configuration for Android 15 compatibility -->
-<paths xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Primary cache directory path -->
+<paths>
     <cache-path name="cached_files" path="."/>
-    <!-- Additional paths for better platform compatibility -->
-    <external-cache-path name="external_cache" path="."/>
-    <external-files-path name="external_files" path="."/>
-    <files-path name="internal_files" path="."/>
-    <!-- Comment: Added comprehensive path definitions to ensure FileProvider works correctly on all API levels -->
 </paths>
