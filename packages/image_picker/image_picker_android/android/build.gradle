@@ -46,6 +46,23 @@ android {
         testImplementation "org.robolectric:robolectric:4.10.3"
     }
 
+    // Specify ProGuard configuration for release builds
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            
+            // Prevent R8 full mode for better compatibility
+            buildConfigField "boolean", "DISABLE_R8_FULL_MODE", "true"
+        }
+        
+        debug {
+            // Apply ProGuard rules even in debug for consistent behavior
+            minifyEnabled false
+            proguardFiles 'proguard-rules.pro'
+        }
+    }
+
     configurations.all {
         resolutionStrategy {
             force 'androidx.core:core:1.13.3'
